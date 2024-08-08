@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jpabook.jpashop.service.ItemServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-08-08T10:14:17" hostname="JooYoung.local" time="0.002">
+  <properties/>
+  <testcase name="재고_수량_변경" classname="jpabook.jpashop.service.ItemServiceTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

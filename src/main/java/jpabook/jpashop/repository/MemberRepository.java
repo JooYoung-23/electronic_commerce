@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 @RequiredArgsConstructor
 public class MemberRepository {
 
-  private EntityManager em;
+  final private EntityManager em;
 
   public void save(Member member) {
     em.persist(member);

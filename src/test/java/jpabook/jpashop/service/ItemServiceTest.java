@@ -16,7 +16,7 @@ public class ItemServiceTest {
       book.setStockQuantity(0);
 
       //When
-      book.AddStock(10);
+      book.addStock(10);
       book.removeStock(11);
 
       //Then

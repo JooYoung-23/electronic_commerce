@@ -19,7 +19,7 @@ public abstract class Item {
   private int price;
   private int stockQuantity;
 
-  public void AddStock(int quantity) {
+  public void addStock(int quantity) {
     this.stockQuantity += quantity;
   }
 

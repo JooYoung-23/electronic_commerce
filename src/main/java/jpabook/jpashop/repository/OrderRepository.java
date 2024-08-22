@@ -54,11 +54,23 @@ public class OrderRepository {
     return query.getResultList();
   }
 
-  public List<Order> findAllByFetchJoin() {
+  public List<Order> findAllByFetchJoinToOne(int offset, int limit) {
     return em.createQuery(
-            "select o from Order o" +
+            "select distinct o from Order o" +
                 " join fetch o.member m" +
                 " join fetch o.delivery d", Order.class)
+        .setFirstResult(offset)
+        .setMaxResults(limit)
+        .getResultList();
+  }
+
+  public List<Order> findAllByFetchJoinToMany() {
+    return em.createQuery(
+            "select distinct o from Order o" +
+                " join fetch o.member m" +
+                " join fetch o.delivery d" +
+                " join fetch o.orderItems oi" +
+                " join fetch oi.item i", Order.class)
         .getResultList();
   }
 }

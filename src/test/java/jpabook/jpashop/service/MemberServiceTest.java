@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import jakarta.persistence.EntityManager;
 import jpabook.jpashop.domain.Member;
-import jpabook.jpashop.repository.MemberRepository;
+import jpabook.jpashop.repository.MemberRepositoryImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ public class MemberServiceTest {
   @Autowired
   MemberService memberService;
   @Autowired
-  MemberRepository memberRepository;
+  MemberRepositoryImpl memberRepository;
   @Autowired
   EntityManager em;
 

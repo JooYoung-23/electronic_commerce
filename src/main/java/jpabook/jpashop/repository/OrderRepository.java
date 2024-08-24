@@ -53,4 +53,24 @@ public class OrderRepository {
     TypedQuery<Order> query = em.createQuery(cq).setMaxResults(1000); //최대 1000건
     return query.getResultList();
   }
+
+  public List<Order> findAllByFetchJoinToOne(int offset, int limit) {
+    return em.createQuery(
+            "select distinct o from Order o" +
+                " join fetch o.member m" +
+                " join fetch o.delivery d", Order.class)
+        .setFirstResult(offset)
+        .setMaxResults(limit)
+        .getResultList();
+  }
+
+  public List<Order> findAllByFetchJoinToMany() {
+    return em.createQuery(
+            "select distinct o from Order o" +
+                " join fetch o.member m" +
+                " join fetch o.delivery d" +
+                " join fetch o.orderItems oi" +
+                " join fetch oi.item i", Order.class)
+        .getResultList();
+  }
 }
